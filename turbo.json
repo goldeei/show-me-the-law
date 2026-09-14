@@ -5,7 +5,11 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"]
+      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"],
+      "env": ["DATABASE_URL", "REDIS_URL", "PORT", "NODE_ENV"]
+    },
+    "clean": {
+      "cache": false
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -16,6 +20,11 @@
     "dev": {
       "cache": false,
       "persistent": true
-    }
+    },
+    "db:push": { "cache": false },
+    "db:generate": { "cache": false, "outputs": ["drizzle/**"] },
+    "db:migrate": { "cache": false },
+    "db:seed": { "cache": false },
+    "ingest": { "cache": false }
   }
 }

@@ -1,0 +1,31 @@
+{
+  "name": "worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "dotenv -e ../../.env -- tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint .",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "bullmq": "^6.3.4",
+    "ioredis": "^6.0.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "8.0.1",
+    "@babel/eslint-parser": "8.0.1",
+    "@babel/preset-typescript": "8.0.1",
+    "@show-me-the-law/eslint-config": "workspace:*",
+    "@show-me-the-law/typescript-config": "workspace:*",
+    "@types/node": "^24.1.0",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "10.9.1",
+    "tsx": "^4.23.13",
+    "typescript": "7.0.2"
+  }
+}
