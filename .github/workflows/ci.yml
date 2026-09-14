@@ -1,0 +1,4 @@
+- pnpm/action-setup
+- actions/setup-node (node 24, cache: pnpm)
+- pnpm install --frozen-lockfile
+- turbo run lint check-types build
