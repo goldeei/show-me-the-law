@@ -1,4 +1,14 @@
-- pnpm/action-setup
-- actions/setup-node (node 24, cache: pnpm)
-- pnpm install --frozen-lockfile
-- turbo run lint check-types build
+name: CI
+on: [push, pull_request]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: turbo run lint check-types build
