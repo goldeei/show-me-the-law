@@ -11,4 +11,4 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: turbo run lint check-types build
+      - run: pnpm exec turbo run lint check-types build
