@@ -1,0 +1,9 @@
+{
+  "extends": "@show-me-the-law/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "types": ["node"]
+  },
+  "include": ["src/**/*", "drizzle.config.ts"],
+  "exclude": ["node_modules", "drizzle", "dist"]
+}
