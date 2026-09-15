@@ -37,3 +37,11 @@ export const processStatusEnum = pgEnum("process_status", [
 ]);
 
 export const entityTypeEnum = pgEnum("entity_type", ["statute", "regulation"]);
+
+/** Government tier for a statute's `location`. */
+export const jurisdictionLevelEnum = pgEnum("jurisdiction_level", [
+  "federal",
+  "state",
+  "district",
+  "territory",
+]);
